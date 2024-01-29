@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import mongoose from "mongoose";
 import Dotenv from "dotenv";
 import dbConnect from "./db/db.js";
 import path from "path";
@@ -31,7 +32,7 @@ app.use(express.static(path.join(__dirname, './client/build')))
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
-
+mongoose.set('strictQuery', false);
 dbConnect();
 
 const port = process.env.PORT || 5000;
