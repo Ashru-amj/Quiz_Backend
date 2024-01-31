@@ -35,7 +35,7 @@ const shareQuizLink = async (req, res) => {
     }
 
     // Generate a unique link or code for sharing
-    const shareLink = `https://65ba586c458e03e68f8e3b03--boisterous-cajeta-1e9041.netlify.app/quiz/${quizId}`;
+    const shareLink = `https://boisterous-cajeta-1e9041.netlify.app/quiz/${quizId}`;
 
     res.status(200).json({ shareLink });
   } catch (error) {
